@@ -1,0 +1,80 @@
+.floating__select__label__container {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  width: 320px;
+}
+.floating__select__label__container select {
+  border: 1px solid #5E6488 ;
+  border-radius: 4px;
+  border-right: none;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  font-size: 16px;
+  padding: 0  10px;
+
+  display: block;
+  height: 54px;
+  line-height: 24px;
+  width: 30%;
+  &:focus{
+    outline: none;
+  }
+}
+.floating__select__label {
+    position: relative;
+    width: 70%;
+  }
+ 
+  .floating__select__label input {
+    border: 1px solid #5E6488;
+    border-radius: 4px;
+    height: 54px;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 0  10px;
+    padding-top: 10px;
+    display: block;
+    width: 100%;
+    transition: border-color 0.3s;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    background: transparent;
+    color: #03050F;
+    &:focus{
+      outline: none;
+    }
+  }
+  
+  .floating__select__label label {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    z-index: -1;
+    transform: translateY(-50%);
+    transition: top 0.3s, font-size 0.3s, color 0.3s;
+    color: #5E6488
+    ;
+  }
+  
+  .floating__select__label.focused label,
+  .floating__select__label input:not(:placeholder-shown) label {
+    top: 12px;
+    font-size: 12px;
+    color: #5E6488
+    ;
+  }
+
+@media (max-width: 1024px) {
+  .floating__select__label__container {
+    width: 100%;
+  }
+
+  .floating__select__label__container select {
+    width: 25%;
+  }
+  .floating__select__label {
+    width: 75% ;
+  }
+}
+  

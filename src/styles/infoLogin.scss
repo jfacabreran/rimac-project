@@ -1,0 +1,60 @@
+.infoLogin__container {
+  p {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 600;
+    text-align: start;
+    margin-bottom: 20px;
+  }
+  h1 {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 40px;
+    text-align: start;
+    margin-bottom: 20px;
+  }
+  .infoLogin__bg-message {
+    margin-bottom: 20px;
+    width: 172px;
+    height: 24px;
+    border-radius: 4px;
+    text-align: center;
+    align-content: center;
+    font-weight: bold;
+    font-size: 14px;
+    background: rgb(0, 244, 226);
+    background: linear-gradient(
+      90deg,
+      rgba(0, 244, 226, 1) 0%,
+      rgba(0, 255, 127, 1) 100%
+    );
+  }
+}
+
+@media (max-width: 1024px) {
+  .infoLogin__container {
+    h1 {
+      font-size: 28px;
+      line-height: 36px;
+      width: 188px;
+    }
+    .infoLogin__bg-message {
+      font-size: 12px;
+      line-height: 16px;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      width: 135px;
+    }
+  }
+  .section__container-responsive {
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 25px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccd1ee;
+  }
+  .loginPage__image__resposive {
+    height: 160px;
+    width: 136px;
+  }
+}

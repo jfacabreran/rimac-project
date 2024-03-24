@@ -1,0 +1,77 @@
+.resumenPage{
+    max-width: 928px;
+    margin: 0 auto;
+    padding-top: 40px;
+    .resumenPage_title{
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 48px;
+        text-align: left;
+        margin-top: 30px;
+    }
+    .resumenPage__container{
+        width: 928px;
+        height: 308px;
+        margin: 0 auto;
+        margin-top: 50px;
+        padding: 32px;
+        text-align: left;
+        box-shadow: 1px 2px 15px 5px rgba(174,172,243,0.42);
+        p{
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 24px;
+            margin-bottom: 5px;
+        }
+        .resumenPage__container__family{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 216px;
+            height: 28px;
+        }
+        .resumenPage__under-line{
+            border: solid 1px #D7DBF5;
+            margin: 15px 0;
+        }
+        .resumenPage__container-sub-title{
+            font-size: 10px;
+            font-weight: 900;
+            line-height: 16px;
+            text-transform: uppercase;
+        }
+        .resumenPage__container-image{
+            width: 24px;
+            height: 24px;
+        }
+        .resumenPage__container-user-name{
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 28px;
+        }
+        .resumenPage__container-title{
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 24px;
+        }
+        
+    }
+}
+
+
+@media (max-width: 1024px){
+    .resumenPage {
+        width: 85%;
+        .resumenPage_title{
+            font-size: 32px;
+            font-weight: 700;
+            line-height: 40px;
+        }
+        .resumenPage__container{
+            width: 100%;
+        }
+    }
+}
+
+
+

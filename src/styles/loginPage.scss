@@ -1,0 +1,79 @@
+.loginPage__container {
+  height: calc(100vh - 170px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1280px;
+  margin: 0 auto;
+  .loginPage__group-img {
+    width: 50%;
+    text-align: start;
+    img {
+      width: 480px;
+      height: 560px;
+    }
+  }
+  .loginPage__info__container {
+    width: 50%;
+    text-align: start;
+  }
+  .loginPage__info {
+    max-width: 352px;
+    height: 560px;
+    text-align: start;
+  }
+  a {
+    display: block;
+    margin: 15px 0;
+    line-height: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: underline;
+    text-align: start;
+  }
+  .loginPage__btn {
+    width: 195px;
+    height: 65px;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24px;
+    outline: none;
+    transition: all 0.5s;
+  }
+  .loginPage__btn:hover {
+   
+    background-color: #fff;
+    color: black;
+    border: solid 1px black;
+    transition: all 0.5s;
+  }
+}
+
+@media (max-width: 1024px) {
+  .loginPage__container {
+    height: auto;
+    justify-content: flex-start;
+    width: 85%;
+    min-width: 336px;
+    .loginPage__btn {
+      width: 85%;
+      height: 56px;
+      font-size: 18px;
+      line-height: 20px;
+      min-width: 336px;
+      margin: 0 auto;
+      margin-bottom: 30px;
+      outline: none;
+    }
+    
+  }
+  .loginPage__info__container {
+    width: 100% !important;
+    .loginPage__info {
+      max-width: 352px;
+      height: 560px;
+      text-align: start;
+      margin: 0 auto;
+    }
+  }
+}

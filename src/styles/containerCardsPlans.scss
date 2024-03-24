@@ -1,0 +1,28 @@
+.PlanesPage__cards-plans__container {
+  max-width: 1228px;
+  width: auto;
+  display: grid;
+  row-gap: 2rem;
+  column-gap: 0.5rem;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 20px;
+  justify-content: center;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+
+@media (max-width: 1024px) {
+  .PlanesPage__cards-plans__container {
+    max-width: auto;
+    display: flex;
+    margin: 20px 30px;
+    justify-content: start;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+  }
+  .PlanesPage__cards-plans__container::-webkit-scrollbar {
+    width: 0;
+  }
+}

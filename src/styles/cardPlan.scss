@@ -1,0 +1,113 @@
+.cardPlan__container{
+  scroll-snap-align: center;
+  border-radius: 24px;
+  height: 687px;
+  padding: 32px;
+  padding-top: 64px;
+  width: 288px;
+  display: inline-block;
+  min-width: 288px;
+  margin: 0 auto;
+  max-width: 288px;
+  position: relative;
+  text-align: left;
+  margin-bottom: 20px;
+  box-shadow: 1px 2px 15px 5px rgba(174,172,243,0.42);
+  .cardPlan__info__container{
+    // padding: 32px;
+    .cardPlan__image{
+      display: flex;
+      justify-content: space-between;
+      p{
+        font-size: 24px;
+        line-height: 32px;
+        font-weight: 900;
+      }
+      img{
+        width: 56px;
+        height: 56px;
+      }
+    }
+    .cardPlan__cost{
+      color: #7981B2;
+      font-size: 12px;
+      font-weight: 900;
+      line-height: 16px;
+    }
+    .cardPlan__previous-price{
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 20px;
+      margin-top: 0px;
+      color: #7981B2;
+      text-decoration:line-through;
+    }
+    .cardPlan__price{
+      font-size: 20px;
+      font-weight: 900;
+      line-height: 28px;
+      margin-bottom: 20px;
+    }
+    
+  }
+  .cardPlan__description{
+    border-top: 1px solid #D7DBF5;
+    padding-top: 20px;
+    .cardPlan__description-item{
+      list-style: disc;
+      margin-bottom: 15px;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 28px;
+      margin-left: 18px;
+    }
+  }
+  .cardPlan__btn{
+    width: 224px;
+    height: 48px;
+    background-color: #FF1C44;
+    color: #FFFFFF;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 20px;
+    position: absolute;
+    bottom: 30px;
+    transition: all 0.5s;
+  }
+  .cardPlan__btn:hover{
+    width: 224px;
+    height: 48px;
+    background-color: #fff;
+    color: #FF1C44;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 20px;
+    position: absolute;
+    bottom: 30px;
+    border: solid 1px #FF1C44;
+    transition: all 0.5s;
+
+  }
+  .cardPlan__recommended-plan{
+    position: absolute;
+    top: 32px;
+    left: 32px;
+    align-content: center;
+    text-align: center;
+    background-color: #7DF0BA;
+    color: #141938;
+    height: 20px;
+    width: 122px;
+    border-radius: 6px;
+    font-weight: 900;
+    line-height: 16px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 1024px){
+    .cardPlan__container{
+  margin: 15px;
+
+    }
+}

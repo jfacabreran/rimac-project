@@ -1,0 +1,45 @@
+  .loginPage__custom-checkbox {
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 400;
+  }
+  .loginPage__custom-checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+  .loginPage__checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #fff;
+    border-radius: 4px;
+    border: 1px solid #000;
+    transition: background-color 0.3s ease-in-out;
+  }
+  .loginPage__white-arrow:after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 6px;
+    top: 2px;
+    width: 4px;
+    height: 9px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+  .loginPage__custom-checkbox input:checked ~ .loginPage__checkmark {
+    background-color: #000;
+  }
+  .loginPage__custom-checkbox input:checked ~ .loginPage__checkmark:after {
+    display: block;
+  }

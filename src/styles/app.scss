@@ -1,0 +1,43 @@
+@use 'input';
+@use 'select';
+@use 'loginPage';
+@use 'footer';
+@use 'header';
+@use 'cardTypePlan';
+@use 'plansPage';
+@use 'cardPlan';
+@use 'btnBack';
+@use 'resumenPage';
+@use 'step';
+@use 'infoLogin';
+@use 'customCheckbox';
+@use 'containerTypePlans';
+@use 'containerCardsPlans';
+
+
+
+
+.show__desktop{
+  display: block;
+}
+.show__responsive{
+  display: none;
+}
+
+@media (max-width: 1024px) {
+    .show__desktop{
+      display: none !important;
+    }
+    .show__responsive{
+      display: block !important;
+    }
+    .hide__responsive{
+      display: none !important;
+    }
+    .underline{
+      border-bottom: 1px solid #CCD1EE;
+      margin: 0 auto;
+      margin-bottom: 10px;
+      width: 85%;
+    }
+  }

@@ -1,0 +1,36 @@
+.loginPage__header{
+    display: flex;
+    height: 64px;
+    justify-content: space-between;
+    align-items: center;
+    left: 0;
+    top: 0;
+    max-width: 1280px;
+    margin: 0 auto;
+    div{
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+    }
+    p{
+      font-size: 12px;
+      line-height: 16px;
+      font-weight: 600;
+      margin: 0 10px;
+    }
+    .loginPage__number-phone{
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 20px;
+    }
+  }
+
+
+
+  @media (max-width: 1024px) {
+    .loginPage__header{
+      width: 85%;
+      min-width: 336px;
+      height: 56px;
+    }
+  }

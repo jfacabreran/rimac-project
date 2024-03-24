@@ -1,0 +1,79 @@
+.cardTypePlam__container{
+    border-radius: 24px;
+    height: 212px;
+    width: 256px;
+    text-align: left;
+    padding: 24px;
+    box-shadow: 1px 2px 15px 5px rgba(174,172,243,0.42);
+    .cardTypePlan__image{
+        height: 48px;
+        width: 48px;
+        display: block;
+    }
+    .cardTypePlan__type{
+      font-weight: 900;
+      font-size: 20px;
+      line-height: 28px;
+      margin-bottom: 10px;
+    }
+    .cardTypePlan__description{
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 20px;
+    }
+}
+.active{
+  border: 3px solid black;
+  box-shadow: none;
+}
+.radio__container {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+  }
+  
+  .radio__container input {
+    display: none;
+  }
+  
+  .radio__custom {
+    position: relative;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 2px solid #A9AFD9; 
+    background-color: white; 
+  }
+  
+  .radio__container input:checked + .radio__custom {
+    background-color: #389E0D; 
+    border-color: #389E0D; 
+  }
+  
+  .radio__container input:checked + .radio__custom::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 4px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: translate(-50%, -50%) rotate(45deg);
+    .cardTypePlam__container{
+      border: solid 1px black;
+      box-shadow: none;
+    }
+  }
+  
+
+  @media (max-width: 1024px){
+    .cardTypePlam__container{
+      width: 100%;
+      margin-bottom: 20px;
+    } 
+  }

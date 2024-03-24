@@ -1,0 +1,27 @@
+.btn__back {
+  width: 82px;
+  height: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  p {
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: 700;
+    color: #4f4fff;
+  }
+  .btn__icon {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .btn__back{
+    width: auto;
+    p{
+      display: none;
+    }
+  }
+}

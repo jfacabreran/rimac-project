@@ -1,0 +1,50 @@
+.floating__label {
+    position: relative;
+    margin-top: 20px;
+  }
+  
+  .floating__label input {
+    border: 1px solid #5E6488;
+    border-radius: 4px;
+    height: 54px;
+    font-size: 16px;
+    display: block;
+    padding: 0  10px;
+    padding-top: 10px;
+    width: 320px;
+    transition: border-color 0.3s;
+    color: #03050F;
+    line-height: 24px;
+    background: transparent;
+    &:focus{
+      outline: none;
+    }
+  }
+  
+  .floating__label label {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    z-index: -1;
+    transform: translateY(-50%);
+    transition: top 0.3s, font-size 0.3s, color 0.3s;
+    color: #5E6488;
+  }
+  
+  .floating__label.focused label,
+  .floating__label input:not(:placeholder-shown) label {
+    top: 12px;
+    font-size: 12px;
+    color: #5E6488;
+  }
+
+
+  @media (max-width: 1024px) {
+    .floating__label {
+      width: 100% ;
+    }
+    .floating__label input {
+      width: 100% ;
+    }
+  }
+  
