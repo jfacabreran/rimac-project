@@ -1,7 +1,9 @@
+import { useNavigate } from "react-router";
 import IMAGES from "../../assets/images";
 import { useUser } from "../../contexts/userContext";
 import BtnBack from "../common/btnBackComponent";
 import CardPlanType from "./cardPlanTypeComponent";
+import { useEffect } from "react";
 
 const DATA = [
   {
@@ -22,6 +24,12 @@ const DATA = [
 
 const ContainerPlanTypes = ({ checked, toggleCheckbox }) => {
   const { userData } = useUser();
+  const navigation = useNavigate();
+  useEffect(() => {
+    if (!userData) {
+      navigation("/");
+    }
+  }, []);
 
   return (
     <>

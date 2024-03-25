@@ -1,12 +1,20 @@
+import { useNavigate } from "react-router";
 import IMAGES from "../assets/images";
 import BtnBack from "../components/common/btnBackComponent";
 import Header from "../components/common/headerComponent";
 import Steps from "../components/plans/stepsComponent";
 import { useUser } from "../contexts/userContext";
+import { useEffect } from "react";
 
 const SummaryPage = () => {
   const { userData, userPlan } = useUser();
+  const navigation = useNavigate();
 
+  useEffect(() => {
+    if (!userData) {
+      navigation("/");
+    }
+  }, []);
   return (
     <>
       <Header />
@@ -25,20 +33,20 @@ const SummaryPage = () => {
               alt="family"
             />
             <p className="summaryPage__container-user-name">
-              {userData.name + " " + userData.lastName}
+              {userData?.name + " " + userData?.lastName}
             </p>
           </div>
           <div className="summaryPage__under-line"></div>
           <p className="summaryPage__container-title">Responsable de pago</p>
           <div className="summaryPage__container-document">
             <p>
-              {userData.tipoDocumento} : {userData.numeroDocumento}
+              {userData?.tipoDocumento} : {userData?.numeroDocumento}
             </p>
-            <p>Celular: {userData.telefono}</p>
+            <p>Celular: {userData?.telefono}</p>
           </div>
           <p className="summaryPage__container-title">Plan elegido</p>
-          <p>{userPlan.planName}</p>
-          <p>Costo del Plan: ${userPlan.planPrice} al mes</p>
+          <p>{userPlan?.planName}</p>
+          <p>Costo del Plan: ${userPlan?.planPrice} al mes</p>
         </div>
       </div>
     </>
