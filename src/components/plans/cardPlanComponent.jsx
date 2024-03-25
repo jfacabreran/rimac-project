@@ -1,7 +1,6 @@
-import IMAGES from "../assets/images";
+import IMAGES from "../../assets/images";
 
-/* eslint-disable react/prop-types */
-const CardPlan = ({ checked, name, price, description, onclick }) => {
+const CardPlan = ({ checked, name, price, description, onClick }) => {
   const planPrice = checked === 1 ? price - price * 0.05 : price;
   return (
     <>
@@ -15,7 +14,7 @@ const CardPlan = ({ checked, name, price, description, onclick }) => {
           <div className="cardPlan__image">
             <p>{name}</p>
             <img
-              className="cardTypePlan__image"
+              className="cardPlanType__image"
               src={
                 name.includes("Clínica")
                   ? IMAGES.iconPlanClinic
@@ -42,7 +41,7 @@ const CardPlan = ({ checked, name, price, description, onclick }) => {
           })}
         </ul>
         <button
-          onClick={() => onclick({ planPrice: planPrice, planName: name })}
+          onClick={() => onClick({ planPrice: planPrice, planName: name })}
           className="cardPlan__btn"
         >
           Seleccionar Plan

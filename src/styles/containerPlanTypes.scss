@@ -1,5 +1,5 @@
 .PlansPage__container {
-    max-width: 1228px;
+    max-width: 1280px;
     margin: 0 auto;
     padding-top: 40px;
     .PlansPage__title {
@@ -19,7 +19,7 @@
       margin: 0 auto;
       margin-bottom: 30px;
     }
-    .PlanesPage__cards-type-plans__container {
+    .PlansPage__cards-type-plans__container {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -51,7 +51,7 @@
         font-weight: 400;
         margin-top: 10px;
       }
-      .PlanesPage__cards-type-plans__container {
+      .PlansPage__cards-type-plans__container {
         width: 100%;
         display: block;
         margin: 0 auto;

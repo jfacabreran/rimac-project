@@ -1,10 +1,11 @@
 .loginPage__container {
-  height: calc(100vh - 170px);
+  min-height: calc(100vh - 170px);
   display: flex;
   justify-content: space-between;
   align-items: center;
   max-width: 1280px;
   margin: 0 auto;
+  padding: 30px 0;
   .loginPage__group-img {
     width: 50%;
     text-align: start;

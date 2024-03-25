@@ -1,21 +1,18 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router";
-import IMAGES from "../assets/images";
-import BtnBack from "./btnBack.component";
+import IMAGES from "../../assets/images";
+import BtnBack from "../common/btnBackComponent";
 
 const Steps = () => {
   const location = useLocation();
   const [step, setStep] = useState(false);
   useEffect(() => {
-    console.log(location.pathname); // Imprime la ruta actual
-    // Aquí puedes agregar lógica condicional basada en la ruta
     if (location.pathname.includes("resumen")) {
       setStep(!step);
     }
   }, [location]);
   return (
     <div className="step__container">
-      {/* <BtnBack responsive={"show__responsive"} url={"/planes"} /> */}
       <div className="step__container-bar show__responsive">
         <div className="step__container__progress-bar">
           <BtnBack url={-1} />

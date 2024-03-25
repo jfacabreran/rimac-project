@@ -1,5 +1,5 @@
-.PlanesPage__cards-plans__container {
-  max-width: 1228px;
+.PlansPage__cards-plans__container {
+  max-width: 1280px;
   width: auto;
   display: grid;
   row-gap: 2rem;
@@ -12,17 +12,17 @@
 }
 
 @media (max-width: 1024px) {
-  .PlanesPage__cards-plans__container {
+  .PlansPage__cards-plans__container {
     max-width: auto;
     display: flex;
-    margin: 20px 30px;
     justify-content: start;
+    padding: 20px 60px;
     width: 100%;
     max-width: 100%;
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
   }
-  .PlanesPage__cards-plans__container::-webkit-scrollbar {
+  .PlansPage__cards-plans__container::-webkit-scrollbar {
     width: 0;
   }
 }

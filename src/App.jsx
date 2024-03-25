@@ -2,10 +2,10 @@ import "./App.css";
 import "./styles/app.scss";
 import LoginPage from "./pages/LoginPage";
 import { Route, Routes } from "react-router";
-import Resumen from "./pages/ResumenPage";
+import SummaryPage from "./pages/SummaryPage";
 import { BrowserRouter } from "react-router-dom";
 import { UserProvider } from "./contexts/userContext";
-import PlanesPage from "./pages/PlansPage";
+import PlansPage from "./pages/PlansPage";
 
 function App() {
   return (
@@ -14,8 +14,8 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<LoginPage />} />
-            <Route path="/planes" element={<PlanesPage />} />
-            <Route path="/resumen" element={<Resumen />} />
+            <Route path="/planes" element={<PlansPage />} />
+            <Route path="/resumen" element={<SummaryPage />} />
           </Routes>
         </BrowserRouter>
       </UserProvider>

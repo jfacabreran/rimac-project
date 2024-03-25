@@ -1,14 +1,14 @@
 import { useState } from "react";
 import IMAGES from "../assets/images";
-import FloatingLabelInput from "../components/inputComponent";
-import FloatingLabelSelect from "../components/selectComponent";
-import Footer from "../components/footerComponet";
-import Header from "../components/header.component";
+import FloatingLabelInput from "../components/common/inputComponent";
+import FloatingLabelSelect from "../components/common/selectComponent";
+import Footer from "../components/common/footerComponent";
+import Header from "../components/common/headerComponent";
 import { useNavigate } from "react-router";
 import { useUser } from "../contexts/userContext";
-import InfoLogin from "../components/infoLogin.component";
-import ErrorMessage from "../components/errorMessage.component";
-import CustomCheckbox from "../components/customCheckbox.component";
+import InfoLogin from "../components/login/infoLoginComponent";
+import ErrorMessage from "../components/common/errorMessageComponent";
+import CustomCheckbox from "../components/common/customCheckboxComponent";
 const URL = "https://rimac-front-end-challenge.netlify.app/api/user.json";
 
 const LoginPage = () => {
@@ -25,41 +25,22 @@ const LoginPage = () => {
   const { setUserData } = useUser();
   const navigation = useNavigate();
 
-  const fetchUserData = async () => {
-    try {
-      const response = await fetch(URL);
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
-      const json = await response.json();
-      json["tipoDocumento"] = docType;
-      json["numeroDocumento"] = selectValue;
-      json["telefono"] = inputValue;
-      console.log("usuario", json);
-      setUserData(json);
-      navigation("/planes");
-    } catch (error) {
-      console.log(error.message);
-    }
+  const fetchUserData = () => {
+    fetch(URL)
+      .then((response) => response.json())
+      .then((userData) => {
+        userData["tipoDocumento"] = docType;
+        userData["numeroDocumento"] = selectValue;
+        userData["telefono"] = inputValue;
+        setUserData(userData);
+        navigation("/planes");
+      })
+      .catch((error) => console.log(error.message));
   };
 
   const handleDocTypeChange = (event) => {
     setDocType(event.target.value);
-  };
-  const validateSelect = (event) => {
-    const inputSelectValue = event;
-    const regex = /^[0-9\b]+$/;
-    if (inputSelectValue === "" || regex.test(inputSelectValue)) {
-      setSelectValue(event);
-    }
-  };
-
-  const validateInput = (event) => {
-    const inputValue = event;
-    const regex = /^[0-9\b]+$/;
-    if (inputValue === "" || regex.test(inputValue)) {
-      setInputValue(event);
-    }
+    setSelectValue("");
   };
 
   const handleCheckboxPrivacidadChange = () => {
@@ -69,6 +50,15 @@ const LoginPage = () => {
     setComunicacionesIsChecked(!isComunicacionesChecked);
   };
 
+  const validateNumber = (event, type) => {
+    const inputValue = event;
+    const regex = /^[0-9\b]+$/;
+    if (inputValue === "" || regex.test(inputValue)) {
+      if (type === "input") {
+        setInputValue(event);
+      } else setSelectValue(event);
+    }
+  };
   const validationForm = () => {
     if (selectValue === "") {
       setErrorSelectValue("Por favor, ingresa tu documento.");
@@ -106,7 +96,7 @@ const LoginPage = () => {
             <InfoLogin image={IMAGES.imageLogin} />
             <FloatingLabelSelect
               maxLength={docType === "DNI" ? 8 : 11}
-              validate={validateSelect}
+              validate={(e) => validateNumber(e, "select")}
               selectValue={selectValue}
               docType={docType}
               handleChange={handleDocTypeChange}
@@ -114,7 +104,7 @@ const LoginPage = () => {
             />
             <ErrorMessage error={errorSelectValue} />
             <FloatingLabelInput
-              validateInput={validateInput}
+              validateInput={(e) => validateNumber(e, "input")}
               inputValue={inputValue}
               label={"Celular"}
               maxLength={9}

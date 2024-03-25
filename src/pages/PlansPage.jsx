@@ -1,41 +1,33 @@
 import { useEffect, useState } from "react";
-import Header from "../components/header.component";
+import Header from "../components/common/headerComponent";
 import { useUser } from "../contexts/userContext";
 import { useNavigate } from "react-router";
-import Steps from "../components/steps.component";
-import ContainerTypePlans from "../components/containerTypePlans.component";
-import ContainerCardsPlans from "../components/containerCardsPlans.component";
+import Steps from "../components/plans/stepsComponent";
+import ContainerPlanTypes from "../components/plans/containerPlanTypesComponent";
+import ContainerCardsPlans from "../components/plans/containerCardsPlansComponent";
 
-const PlanesPage = () => {
+const URL = "https://rimac-front-end-challenge.netlify.app/api/plans.json";
+const PlansPage = () => {
   const [checked, setChecked] = useState("");
-  const [planes, setPlanes] = useState([]);
-  const { age, setUserPlan } = useUser();
+  const [plans, setPlans] = useState([]);
+  const { setUserPlan } = useUser();
   const navigation = useNavigate();
+
   const toggleCheckbox = (id) => {
     setChecked(id);
   };
-
   const fetchPlansData = () => {
-    fetch("https://rimac-front-end-challenge.netlify.app/api/plans.json")
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return response.json();
-      })
-      .then((data) => {
-        setPlanes(data.list);
-      })
-      .catch((error) => {
-        console.error("There was a problem with the fetch operation:", error);
-      });
+    fetch(URL)
+      .then((response) => response.json())
+      .then((data) => setPlans(data.list))
+      .catch((error) => console.log(error));
   };
-  const selectedPlan = (plan) => {
+  const onPlanSelected = (plan) => {
     setUserPlan(plan);
     navigation("/resumen");
   };
+
   useEffect(() => {
-    console.log(age);
     if (checked !== "") fetchPlansData();
   }, [checked]);
 
@@ -43,15 +35,14 @@ const PlanesPage = () => {
     <>
       <Header />
       <Steps />
-      <ContainerTypePlans checked={checked} toggleCheckbox={toggleCheckbox} />
+      <ContainerPlanTypes checked={checked} toggleCheckbox={toggleCheckbox} />
       <ContainerCardsPlans
         checked={checked}
-        planes={planes}
-        age={age}
-        selectedPlan={selectedPlan}
+        plans={plans}
+        onPlanSelected={onPlanSelected}
       />
     </>
   );
 };
 
-export default PlanesPage;
+export default PlansPage;

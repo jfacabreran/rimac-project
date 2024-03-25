@@ -1,4 +1,3 @@
-// eslint-disable-next-line react/prop-types
 const InfoLogin = ({ image }) => {
   return (
     <div className="infoLogin__container">
@@ -8,7 +7,7 @@ const InfoLogin = ({ image }) => {
           <h1>Creado para ti y tu familia</h1>
         </div>
         <img
-          className="loginPage__image__resposive show__responsive"
+          className="loginPage__image__responsive show__responsive"
           src={image}
           alt="grupo"
         />

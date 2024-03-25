@@ -5,6 +5,7 @@
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
+  margin-left: 70px;
   p {
     font-size: 18px;
     line-height: 20px;
@@ -18,9 +19,10 @@
 }
 
 @media (max-width: 1024px) {
-  .btn__back{
+  .btn__back {
     width: auto;
-    p{
+    margin-left: 0;
+    p {
       display: none;
     }
   }
